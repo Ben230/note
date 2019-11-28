@@ -7,7 +7,8 @@
     if (this.notes.length === 0) {
       return "";
     } else {
-    return "<ul><li><div>" + this.notes.join("</div></li><li><div>") + "</div></li></ul>";
+    return "<ul><li><div>" + this.notes.join("</div></li><li><div>")
+    + "</div></li></ul>";
     }
   };
 
