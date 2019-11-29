@@ -1,13 +1,14 @@
-function testNoteListViewWithNoNotes() {
+(function() {
+  console.log('Test NotListView with no notes')
   var noteBook = new NoteBook();
   var noteListView = new NoteListView(noteBook);
 
   eval.isTrue(noteListView.return() === "");
 
-}
-testNoteListViewWithNoNotes();
+})();
 
-function testNoteListViewWithOneNote() {
+(function() {
+  console.log('Test NoteListView with one note')
   var note1 = new Note('test note 1');
   var noteBook = new NoteBook();
   noteBook.addNote(note1);
@@ -15,10 +16,10 @@ function testNoteListViewWithOneNote() {
 
   eval.isTrue(noteListView.return() === "<ul><li><div>test note 1</div></li></ul>");
 
-}
-testNoteListViewWithOneNote();
+})();
 
-function testNoteListViewWithTwoNotes() {
+(function() {
+  console.log('Test NoteListView with two notes')
   var note1 = new Note('test note 1');
   var note2 = new Note('test note 2');
   var noteBook = new NoteBook();
@@ -28,5 +29,4 @@ function testNoteListViewWithTwoNotes() {
 
   eval.isTrue(noteListView.return() === "<ul><li><div>test note 1</div></li><li><div>test note 2</div></li></ul>");
 
-}
-testNoteListViewWithTwoNotes();
+})();

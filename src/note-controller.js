@@ -1,3 +1,17 @@
+(function(exports) {
+  function NoteController(noteBook) {
+    this.noteView = new NoteListView(noteBook)
+    // spec: constructor should add note to noteBook
+  }
+
+  NoteController.prototype.insertHTML = function() {
+    var element = document.getElementById('app');
+    element.innerHTML = this.noteView.return();
+  }
+
+  exports.NoteController = NoteController
+})(this);
+
 // In console:
 // 1. Create noteBook object
 // 2. Create noteController object
@@ -20,22 +34,3 @@
 
   // exports.NoteController = NoteController;
 // })(this);
-
-(function(exports) {
-  function NoteController(noteBook) {
-    this.noteView = new NoteListView(noteBook)
-    // spec: constructor should add note to noteBook
-  }
-
-  NoteController.prototype.insertHTML = function() {
-    var element = document.getElementById('app');
-    element.innerHTML = this.noteView.return();
-  }
-
-  exports.NoteController = NoteController
-})(this)
-
-
-
-
-
