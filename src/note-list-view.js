@@ -4,11 +4,20 @@
   };
 
   NoteListView.prototype.return = function() {
-    if (this.notes.length === 0) {
+    var notes = this.notes;
+    if (notes.length === 0) {
       return "";
     } else {
-    return "<ul><li><div>" + this.notes.join("</div></li><li><div>")
-    + "</div></li></ul>";
+      notes.forEach(function(note, index) {
+        if (note.length <= 20) {
+
+        } else {
+          notes[index] = notes[index].slice(0,20);
+          notes[index] += "..."
+        }
+      });
+      return "<ul><li><div>" + notes.join("</div></li><li><div>")
+      + "</div></li></ul>";
     }
   };
 

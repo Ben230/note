@@ -30,3 +30,13 @@
   eval.isTrue(noteListView.return() === "<ul><li><div>test note 1</div></li><li><div>test note 2</div></li></ul>");
 
 })();
+
+(function(){
+    console.log('Tests NoteListView returns abbreviation if notes has 21characters.')
+    var note = new Note('The rain in Espanol!!');
+    var noteBook = new NoteBook();
+    noteBook.addNote(note);
+    var noteListView = new NoteListView(noteBook);
+    eval.isTrue(noteListView.return() === "<ul><li><div>The rain in Espanol!...</div></li></ul>")
+
+})();
